@@ -1,0 +1,60 @@
+/* Taskbar CSS*/
+
+.taskBar{
+  background-color: #BABABA;
+  height: 46px;
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 3px solid #EFEFED;
+}
+
+.taskBarItems{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+
+.taskBarItems p{
+  padding: 7px;
+  margin: 0;
+  font-size:22px;
+  line-height: 22px;
+}
+
+.taskBarItem{
+  display: flex;
+}
+
+.divider{
+  height: 40px;
+  width:0px;
+  border-radius: .5px;
+  border-left: 2px solid #848486;
+  border-right: 2px solid #EFEFED;
+}
+
+.taskBarStart {
+ margin-left: 5px;
+ margin-right: 2px;
+ border-top: 2px solid #EFEFED;
+ border-left: 2px solid #EFEFED;
+ border-right: 2px solid #0F0F0F;
+ border-bottom: 2px solid #0F0F0F;
+ height: 36px;
+ align-items: center;
+}
+
+.taskBarTime {
+  margin-right: 5px;
+  margin-left: 2px;
+  border-top: 2px solid #848486;
+  border-left: 2px solid #848486;
+  border-bottom: 1px solid #EFEFED;
+  border-right: 1px solid #EFEFED;
+  height: 36px;
+  align-items: center;
+}
+
+
