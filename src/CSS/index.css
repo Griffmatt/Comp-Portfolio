@@ -1,11 +1,15 @@
+@font-face {
+  font-family: 'W95';
+  font-style: normal;
+  src: url("../Fonts/W95FA.otf") format("opentype");
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #007C7C;
+  font-family: "W95";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+

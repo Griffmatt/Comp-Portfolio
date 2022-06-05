@@ -23,8 +23,23 @@
   line-height: 22px;
 }
 
+.taskBarItems img{
+  height: 22px;
+  width: auto;
+}
+
 .taskBarItem{
   display: flex;
+  gap: 5px;
+}
+
+.taskBarItem ul{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .divider{
@@ -37,18 +52,17 @@
 
 .taskBarStart {
  margin-left: 5px;
- margin-right: 2px;
  border-top: 2px solid #EFEFED;
  border-left: 2px solid #EFEFED;
  border-right: 2px solid #0F0F0F;
  border-bottom: 2px solid #0F0F0F;
  height: 36px;
  align-items: center;
+ display: flex;
 }
 
 .taskBarTime {
   margin-right: 5px;
-  margin-left: 2px;
   border-top: 2px solid #848486;
   border-left: 2px solid #848486;
   border-bottom: 1px solid #EFEFED;
