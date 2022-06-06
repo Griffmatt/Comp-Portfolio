@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+
 function Notes() {
     const [hidden, setHidden] = useState(true)
 
@@ -30,12 +31,12 @@ function Notes() {
                 left: left,
                 top: top
             });
-         }
+        }
       };
    
 
   return (
-    <div className="notes" onMouseDown={dragStart} onMouseMove={drag} onMouseUp={()=>{setIsDragging(false)}} style={styles}>
+    <div className="notes" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} style={styles}>
         <div className="topBar">
             <div>
                 <img src="/Images/notepad.png" alt="Note Pad"/>

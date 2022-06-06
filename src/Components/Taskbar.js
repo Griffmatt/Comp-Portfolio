@@ -27,9 +27,11 @@ function Taskbar() {
                     <li><a><img src="Images/help-book.png" alt="Windows Logo"/></a></li>
                 </ul>
                 <div className="divider"/>
-                <div className="notesBar">
-                    <img src="/Images/notepad.png" alt="Note Pad"/>
-                    <p>Notes</p>
+                <div className="openBars">
+                    <div className="openBar active">
+                        <img src="/Images/notepad.png" alt="Note Pad"/>
+                        <p>Notes</p>
+                    </div>
                 </div>
             </div>
             <div className="taskBarItem">

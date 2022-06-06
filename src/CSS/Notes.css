@@ -27,6 +27,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    cursor: default;
 }
 
 .closeButton{
@@ -40,6 +41,7 @@
     border-bottom: 2px solid #0F0F0F;
     text-align: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .textArea{
@@ -57,3 +59,4 @@
     padding: 10px;
     margin: 0;
 }
+
