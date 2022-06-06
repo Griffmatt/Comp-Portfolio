@@ -5,10 +5,15 @@
     align-items: flex-start;
 }
 
+.icons a{
+    text-decoration: none;
+}
+
 .icon{
     align-items: center;
     color: whitesmoke;
-    letter-spacing: .06rem;
+    letter-spacing: .086rem;
+    font-weight: 500;
     cursor: pointer;
 }
 
@@ -22,3 +27,5 @@
     margin-top: 8px;
     text-align: center;
 }
+
+

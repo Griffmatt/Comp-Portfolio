@@ -19,6 +19,7 @@
 .taskBarItems p{
   padding: 7px;
   margin: 0;
+  letter-spacing: .06rem;
   font-size:22px;
   line-height: 22px;
 }
@@ -42,6 +43,10 @@
   padding: 0;
 }
 
+.taskBarItem li{
+  cursor: pointer;
+}
+
 .divider{
   height: 40px;
   width:0px;
@@ -59,7 +64,14 @@
  height: 36px;
  align-items: center;
  display: flex;
+ cursor: pointer;
 }
+
+.taskBarStart p {
+  font-weight: 600;
+}
+
+
 
 .taskBarTime {
   margin-right: 5px;
@@ -69,6 +81,17 @@
   border-right: 1px solid #EFEFED;
   height: 36px;
   align-items: center;
+}
+
+.notesBar{
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #EFEFED;
+ border-left: 2px solid #EFEFED;
+ border-right: 2px solid #0F0F0F;
+ border-bottom: 2px solid #0F0F0F;
+ width: 125px;
+ font-weight: 400;
 }
 
 

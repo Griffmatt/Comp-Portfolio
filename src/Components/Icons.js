@@ -1,26 +1,31 @@
 import React from 'react'
+import resume from '../Resume.pdf'
 
 function Icons() {
 
     let icons = [
         {
             name:"Projects",
-            image:"/Images/file.png"
+            image:"/Images/file.png",
+            link:""
         
         },
         {
             name:"Resume",
-            image:"/Images/document.png"
+            image:"/Images/document.png",
+            link: resume
         
         },
         {
             name:"LinkedIn",
-            image:"/Images/linkedin.png"
+            image:"/Images/linkedin.png",
+            link:"https://www.linkedin.com/in/griffin-matthews/"
         
         },
         {
             name:"GitHub",
-            image:"/Images/github-logo.png"
+            image:"/Images/github-logo.png",
+            link:"https://github.com/Griffmatt"
         
         },
     ]
@@ -29,10 +34,12 @@ function Icons() {
     <div className="icons">
         {icons.map(icon=>{
             return(
-                <div className="icon">
-                    <img src={icon.image}/>
-                    <p>{icon.name}</p>
-                </div>
+                <a href={icon.link} target="_blank" rel="noreferrer" key={icon.name}>
+                    <div className="icon">
+                        <img src={icon.image} alt={icon.name}/>
+                        <p>{icon.name}</p>
+                    </div>
+                </a>
             )
         })}
     </div>
