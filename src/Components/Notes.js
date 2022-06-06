@@ -36,7 +36,7 @@ function Notes() {
    
 
   return (
-    <div className="notes" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} style={styles}>
+    <div className="notes" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={styles}>
         <div className="topBar">
             <div>
                 <img src="/Images/notepad.png" alt="Note Pad"/>
@@ -48,7 +48,7 @@ function Notes() {
             <p>
                 Hello, my name is Griffin Matthews. <br/>
                 I am a Front End Developer <br/>
-                I have experience with React, HTML, CSS, SASS, Adobe Photoshop, NodeJS<span hidden={hidden}>|</span>
+                I have experience with React, HTML, CSS, SASS, Adobe Photoshop, NodeJS <span hidden={hidden}>|</span>
             </p>
         </div>
     </div>
