@@ -1,22 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+
+import {PROJECTS} from "../Projects/projects"
 
 
-function Notes() {
-    const [hidden, setHidden] = useState(true)
+function Projects() {
 
     const [leftX, setLeftX] = useState()
     const [topY, setTopY] = useState()
     const [isDragging, setIsDragging] = useState(false)
     const [styles, setStyles] = useState({});
-
-
-    useEffect(() =>{
-        const interval = setInterval(() => {
-            setHidden(!hidden)
-        }, 600)
-
-        return () => clearInterval(interval);
-    }, [hidden])
 
     const dragStart = (e) => {
         setLeftX(e.screenX - e.currentTarget.getBoundingClientRect().left);
@@ -37,23 +29,29 @@ function Notes() {
    
 
   return (
-    <div className="notes" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={styles}>
+    <div className="projects" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={styles}>
         <div className="topBar">
             <div>
-                <img src="/Images/notepad.png" alt="Note Pad"/>
-                Notes
+                <img src="/Images/file.png" alt="File"/>
+                Projects
             </div>
             <div className="closeButton">X</div>
         </div>
         <div className="textArea">
-            <p>
-                Hello, my name is Griffin Matthews. <br/>
-                I am a Front End Developer <br/>
-                I have experience with React, HTML, CSS, SASS, Adobe Photoshop, NodeJS <span hidden={hidden}>|</span>
-            </p>
+            {PROJECTS.map(project =>{
+                return(
+                    <div key={project.title}>
+                        <h2>{project.title}</h2>
+                        <a href={project.site} target="_blank" rel="noreferrer">
+                            <img src={project.image} alt={project.title}/>
+                        </a>
+                        <h3>{project.tools}</h3>
+                    </div>
+                )
+            })}
         </div>
     </div>
   )
 }
 
-export default Notes
+export default Projects
