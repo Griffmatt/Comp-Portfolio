@@ -1,6 +1,10 @@
+@font-face {
+    font-family: 'W95';
+    font-style: normal;
+    src: url("../Fonts/W95FA.otf") format("opentype");
+  }
+
 .projects{
-    height:100vh;
-    width:90vw;
     background-color: #BABABA;
     border-top: 3px solid #EFEFED;
     border-left: 3px solid #EFEFED;
@@ -8,17 +12,48 @@
     border-bottom: 3px solid #0F0F0F;
     font-size: 24px;
     position: fixed;
-    /*top: 40%;*/
+    top: 40%;
     left: 5%;
 }
 
-.projects img{
-   height: 20px;
-   width: auto;
-   margin-right: 3px;
+.projects .textArea{
+    width: 85vw;
+    height: 85vh;
+    padding-left: 50px;
+    padding-right:50px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.projects .textArea{
-    width: 89vw;
-    height: 95vh;
+.projectContainer{
+    display: flex;
+    justify-content: flex-start;
+    gap:25px;
+}
+
+
+
+.projectContainer img{
+    width:500px;
+    height: auto;
+}
+
+
+
+.projectContainer button{
+    padding: 20px;
+    border-top: 3px solid #BABABA;
+    border-left: 3px solid #BABABA;
+    border-right: 3px solid #0F0F0F;
+    border-bottom: 3px solid #0F0F0F;
+    margin:5px;
+    cursor: pointer;
+    font-family: "W95";
+    font-size: 1.4rem;
+}
+
+.projectContainer button:hover{
+    opacity: .8;
 }

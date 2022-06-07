@@ -40,7 +40,7 @@ function Notes() {
     <div className="notes" onPointerDown={dragStart} onPointerMove={drag} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={styles}>
         <div className="topBar">
             <div>
-                <img src="/Images/notepad.png" alt="Note Pad"/>
+                <img src="/Images/notepad.png" alt="Note Pad" className="topBarImg"/>
                 Notes
             </div>
             <div className="closeButton">X</div>
