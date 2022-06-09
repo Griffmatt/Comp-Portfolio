@@ -20,6 +20,9 @@ function App() {
   const [notesStyles, setNotesStyles] = useState({});
   const [projectsStyles, setProjectsStyles] = useState({});
 
+  const [notesActive, setNotesActive] = useState(false)
+  const [projectsActive, setProjectsActive] = useState(true)
+
 
   let [time, setTime] = useState(new Date().toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}))
 
@@ -38,10 +41,25 @@ function App() {
       return () => clearInterval(interval);
   }, [hidden])
 
-  const dragStart = (e) => {
+  const notesDragStart = (e) => {
       setLeftX(e.screenX - e.currentTarget.getBoundingClientRect().left);
       setTopY(e.screenY - e.currentTarget.getBoundingClientRect().top);
       setIsDragging(true);
+      
+      if(!notesActive){
+        setNotesActive(true)
+        setProjectsActive(false)}
+      }
+
+    const projectsDragStart = (e) => {
+      setLeftX(e.screenX - e.currentTarget.getBoundingClientRect().left);
+      setTopY(e.screenY - e.currentTarget.getBoundingClientRect().top);
+      setIsDragging(true);
+      
+      if(!projectsActive){
+        setNotesActive(false)
+        setProjectsActive(true)
+      }
     };
     
     const dragNotes = (e) => {
@@ -66,6 +84,55 @@ function App() {
     }
   };
 
+  const activeNotesWindow = ()=>{
+    if(notesActive){
+      setHideNotes(true)
+      setNotesActive(false)
+      if(!hideProjects){
+        setProjectsActive(true)
+      }
+      return
+    }
+    if(hideNotes){
+      setHideNotes(false)
+    }
+    setNotesActive(true)
+    setProjectsActive(false)
+  }
+
+  const activeProjectsWindow = ()=>{
+    if(projectsActive){
+      setHideProjects(true)
+      setProjectsActive(false)
+      if(!hideNotes){
+        setNotesActive(true)
+      }
+      return
+    }
+    if(hideProjects){
+      setHideProjects(false)
+    }
+    setProjectsActive(true)
+    setNotesActive(false)
+  }
+
+  const closeProjects = () =>{
+    setHideProjects(true)
+    setProjectsActive(false)
+    if(!hideNotes){
+      setNotesActive(true)
+    }
+  }
+
+    const closeNotes = () =>{
+      setHideNotes(true)
+      setNotesActive(false)
+      if(!hideProjects){
+        setProjectsActive(true)
+      }
+
+  }
+
   return (
     <div className="App">
       <div className="icons">
@@ -84,13 +151,13 @@ function App() {
             )
         })}
     </div>
-    <div className="notes" hidden={hideNotes} onPointerDown={dragStart} onPointerMove={dragNotes} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={notesStyles}>
+    <div className={`${hideNotes?"fadeIn":"fadeOut"} ${notesActive?"activeWindow":""} notes`} onPointerDown={notesDragStart} onPointerMove={dragNotes} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={notesStyles}>
         <div className="topBar">
             <div>
                 <img src="/Images/notepad.png" alt="Note Pad" className="topBarImg"/>
                 Notes
             </div>
-            <div className="closeButton" onPointerDown={()=>setHideNotes(true)}>X</div>
+            <div className="closeButton" onPointerDown={closeNotes}>X</div>
         </div>
         <div className="textArea">
             <p>
@@ -100,13 +167,13 @@ function App() {
             </p>
         </div>
     </div>
-    <div className="projects" hidden={hideProjects} onPointerDown={dragStart} onPointerMove={dragProjects} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={projectsStyles}>
+    <div className={`${hideProjects?"fadeIn":"fadeOut"} ${projectsActive?"activeWindow":""} projects`} onPointerDown={projectsDragStart} onPointerMove={dragProjects} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={projectsStyles}>
         <div className="topBar">
             <div>
                 <img src="/Images/file.png" alt="File" className="topBarImg"/>
                 Projects
             </div>
-            <div className="closeButton" onPointerDown={()=>setHideProjects(true)}>X</div>
+            <div className="closeButton" onPointerDown={closeProjects}>X</div>
         </div>
         <div className="textArea">
             {PROJECTS.map(project =>{
@@ -114,16 +181,16 @@ function App() {
                     <div>
                         <h2>{project.title}</h2>
                         <div key={project.title} className="projectContainer">
-                            <a href={project.site} target="_blank" rel="noreferrer">
+                            <a href={project.site} target="_blank" rel="noreferrer" draggable={false}>
                                 <img src={project.image} alt={project.title}/>
                             </a>
                             <div className="projectInfo">
                                 <h3>{project.tools}</h3>
                                 <p>{project.description}</p>
-                                <a href={project.site} target="_blank" rel="noreferrer">
+                                <a href={project.site} target="_blank" rel="noreferrer" draggable={false}>
                                     <button>Live Site</button>
                                 </a>
-                                <a href={project.gitHub} target="_blank" rel="noreferrer">
+                                <a href={project.gitHub} target="_blank" rel="noreferrer" draggable={false}>
                                     <button>GitHub</button>
                                 </a>
                             </div>
@@ -148,9 +215,13 @@ function App() {
                 </ul>
                 <div className="divider"/>
                 <div className="openBars">
-                    <div className="openBar active" onPointerDown={()=>setHideNotes(!hideNotes)}>
-                        <img src="/Images/notepad.png" alt="Note Pad"/>
+                    <div className={`${notesActive?"active":""} openBar`} onPointerDown={activeNotesWindow}>
+                        <img src="/Images/notepad.png" alt="Notes"/>
                         <p>Notes</p>
+                    </div>
+                    <div className={`${projectsActive?"active":""} openBar`} onPointerDown={activeProjectsWindow}>
+                        <img src="/Images/file.png" alt="projects"/>
+                        <p>Projects</p>
                     </div>
                 </div>
             </div>

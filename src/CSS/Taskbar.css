@@ -7,6 +7,7 @@
   position: fixed;
   bottom: 0;
   border-top: 3px solid #EFEFED;
+  z-index: 11;
 }
 
 .taskBarItems{
@@ -88,6 +89,7 @@
 .openBars{
   display: flex;
   align-items: center;
+  gap:5px;
 }
 
 .openBar{
@@ -100,6 +102,8 @@
  width: 175px;
  font-weight: 400;
  padding-left: 5px;
+
+ cursor: pointer;
 }
 
 .openBar:hover{

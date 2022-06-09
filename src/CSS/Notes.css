@@ -23,7 +23,7 @@
     color:whitesmoke;
     padding: 8px;
     margin:3px;
-    height: 20px;
+    height: 25px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -46,8 +46,8 @@
 
 .textArea{
     background-color: white;
-    width: 574px;
-    height: 438px;
+    width: 95%;
+    height: 87%;
     margin: 10px;
     border-top: 3px solid #0F0F0F;
      border-left: 3px solid #0F0F0F;
@@ -60,3 +60,31 @@
     margin: 0;
 }
 
+
+.fadeIn{
+    animation: fadeIn .1s linear forwards;
+}
+
+.fadeOut{
+    animation: fadeOut .1s linear forwards;
+}
+
+@keyframes fadeOut{
+    0% {opacity: 0;
+        visibility: hidden;
+    }
+    50% {opacity: .5;}
+    100% {opacity: 1; }
+}
+
+@keyframes fadeIn{
+    0% {opacity: 1;}
+    50% {opacity: .5;}
+    100% {opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.activeWindow{
+    z-index: 10;
+}

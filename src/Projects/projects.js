@@ -16,14 +16,6 @@ export const PROJECTS = [
         description: "Using React, Hooks, CSS, i recreated the popular game wordle, it takes an answer checks if it is correct and returns hints to what the answer is."
     },
     {
-        title: "Widows 95 Portfolio",
-        image: "/Images/movieMania.png",
-        tools: "React, CSS, JavaScript",
-        site: "#",
-        gitHub: "https://github.com/Griffmatt/Comp-Portfolio",
-        description: ""
-    },
-    {
         title: "PokeDex",
         image: "/Images/pokedex.png",
         tools: "React, Redux, CSS, BootStrap",
