@@ -116,6 +116,14 @@ function App() {
     setNotesActive(false)
   }
 
+  const openProjects = () => {
+    if(hideProjects){
+      setHideProjects(false)
+    }
+    setProjectsActive(true)
+    setNotesActive(false)
+  }
+
   const closeProjects = () =>{
     setHideProjects(true)
     setProjectsActive(false)
@@ -136,7 +144,7 @@ function App() {
   return (
     <div className="App">
       <div className="icons">
-        <div className="icon" onPointerDown={()=>setHideProjects(false)}>
+        <div className="icon" onPointerDown={openProjects}>
             <img src="/Images/file.png" alt="Projects"/>
             <p>Projects</p>
           </div>
