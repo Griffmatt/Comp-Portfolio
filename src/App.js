@@ -173,7 +173,7 @@ function App() {
             <p>
                 Hello, my name is Griffin Matthews. <br/>
                 I am a Front End Developer <br/>
-                I have experience with React, HTML, CSS, SASS, Adobe Photoshop, NodeJS <span hidden={hidden}>|</span>
+                I have experience with React, JavaScript, HTML, CSS, SASS, NodeJS, MongoDB, SQL, and more <span hidden={hidden}>|</span>
             </p>
         </div>
     </div>
