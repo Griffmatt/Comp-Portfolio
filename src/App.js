@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react'
 import {PROJECTS} from "./Projects/projects"
 import {icons} from './Projects/icons'
 
+import resume from './Resume.pdf'
+
 
 import './CSS/Taskbar.css';
 import './CSS/Icons.css';
@@ -20,8 +22,8 @@ function App() {
   const [notesStyles, setNotesStyles] = useState({});
   const [projectsStyles, setProjectsStyles] = useState({});
 
-  const [notesActive, setNotesActive] = useState(false)
-  const [projectsActive, setProjectsActive] = useState(true)
+  const [notesActive, setNotesActive] = useState(true)
+  const [projectsActive, setProjectsActive] = useState(false)
 
 
   let [time, setTime] = useState(new Date().toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}))
@@ -144,7 +146,7 @@ function App() {
   return (
     <div className="App">
       <div className="icons">
-        <div className="icon" onPointerDown={openProjects}>
+        <div className="icon" onMouseDown={openProjects}>
             <img src="/Images/file.png" alt="Projects"/>
             <p>Projects</p>
           </div>
@@ -159,13 +161,13 @@ function App() {
             )
         })}
     </div>
-    <div className={`${hideNotes?"fadeIn":"fadeOut"} ${notesActive?"activeWindow":""} notes`} onPointerDown={notesDragStart} onPointerMove={dragNotes} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={notesStyles}>
+    <div className={`${hideNotes?"fadeIn":"fadeOut"} ${notesActive?"activeWindow":""} notes`} onMouseDown={notesDragStart} onMouseMove={dragNotes} onMouseUp={()=>{setIsDragging(false)}} onMouseLeave={()=>{setIsDragging(false)}} style={notesStyles}>
         <div className="topBar">
             <div>
                 <img src="/Images/notepad.png" alt="Note Pad" className="topBarImg"/>
                 Notes
             </div>
-            <div className="closeButton" onPointerDown={closeNotes}>X</div>
+            <div className="closeButton" onMouseDown={closeNotes}>X</div>
         </div>
         <div className="textArea">
             <p>
@@ -175,13 +177,13 @@ function App() {
             </p>
         </div>
     </div>
-    <div className={`${hideProjects?"fadeIn":"fadeOut"} ${projectsActive?"activeWindow":""} projects`} onPointerDown={projectsDragStart} onPointerMove={dragProjects} onPointerUp={()=>{setIsDragging(false)}} onPointerLeave={()=>{setIsDragging(false)}} style={projectsStyles}>
+    <div className={`${hideProjects?"fadeIn":"fadeOut"} ${projectsActive?"activeWindow":""} projects`} onMouseDown={projectsDragStart} onMouseMove={dragProjects} onMouseUp={()=>{setIsDragging(false)}} onMouseLeave={()=>{setIsDragging(false)}} style={projectsStyles}>
         <div className="topBar">
             <div>
                 <img src="/Images/file.png" alt="File" className="topBarImg"/>
                 Projects
             </div>
-            <div className="closeButton" onPointerDown={closeProjects}>X</div>
+            <div className="closeButton" onMouseDown={closeProjects}>X</div>
         </div>
         <div className="textArea">
             {PROJECTS.map(project =>{
@@ -219,15 +221,15 @@ function App() {
                 <ul>
                     <li><a href="https://www.linkedin.com/in/griffin-matthews/" target="_blank" rel="noreferrer"><img src="Images/linkedin.png" alt="Windows Logo"/></a></li>
                     <li><a href="https://github.com/Griffmatt" target="_blank" rel="noreferrer"><img src="Images/github-logo.png" alt="Windows Logo"/></a></li>
-                    <li><a><img src="Images/help-book.png" alt="Windows Logo"/></a></li>
+                    <li><a href={resume} target="_blank" rel="noreferrer"><img src="Images/document.png" alt="Windows Logo"/></a></li>
                 </ul>
                 <div className="divider"/>
                 <div className="openBars">
-                    <div className={`${notesActive?"active":""} openBar`} onPointerDown={activeNotesWindow}>
+                    <div className={`${notesActive?"active":""} openBar`} onMouseDown={activeNotesWindow}>
                         <img src="/Images/notepad.png" alt="Notes"/>
                         <p>Notes</p>
                     </div>
-                    <div className={`${projectsActive?"active":""} openBar`} onPointerDown={activeProjectsWindow}>
+                    <div className={`${projectsActive?"active":""} openBar`} onMouseDown={activeProjectsWindow}>
                         <img src="/Images/file.png" alt="projects"/>
                         <p>Projects</p>
                     </div>

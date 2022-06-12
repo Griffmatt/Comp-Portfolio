@@ -1,6 +1,4 @@
 .notes{
-     height:500px;
-     width:600px;
      background-color: #BABABA;
      border-top: 3px solid #EFEFED;
      border-left: 3px solid #EFEFED;
@@ -8,8 +6,8 @@
      border-bottom: 3px solid #0F0F0F;
      font-size: 24px;
      position: fixed;
-     top: 2%;
-     left: 50%;
+     top: 10vh;
+     right: 10vw;
 }
 
 .topBarImg{
@@ -46,8 +44,10 @@
 
 .textArea{
     background-color: white;
-    width: 95%;
-    height: 87%;
+    width: 40vw;
+    height: 24vh;
+    max-width: 500px;
+    max-height: 600px;
     margin: 10px;
     border-top: 3px solid #0F0F0F;
      border-left: 3px solid #0F0F0F;
@@ -87,4 +87,38 @@
 
 .activeWindow{
     z-index: 10;
+}
+
+@media screen and (max-width: 800px) {
+
+    .notes{
+        top: 0;
+        left: 0;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .notes .textArea{
+        width: 93%;
+        max-width: none;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin: 2%
+    }
+
+    .projectContainer img{
+        min-width:275px;
+        width: 100%;
+        height: auto;
+    }
+
+    .projectInfo{
+        width: 275px;
+        width:100%;
+    }
+    
+    .projectContainer{
+        width:98%;
+        margin-bottom: 10px;
+    }
+    
 }

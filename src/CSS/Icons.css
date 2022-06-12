@@ -28,4 +28,18 @@
     text-align: center;
 }
 
+@media screen and (max-width:800px){
+    .icons{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .icon img{
+        height: 10vw;
+        min-height: 50px;
+    }
+    
+}
+
 
