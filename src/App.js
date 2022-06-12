@@ -44,17 +44,9 @@ function App() {
   }, [hidden])
 
   useEffect(() => {
-    if(window.innerWidth<800){
-      setNotesStyles({
-        left:0,
-        top:0
-      })
-      setProjectsStyles({
-        left:0,
-        top:0
-      })
-      return
-    }
+    setNotesStyles({})
+    setProjectsStyles({})
+
   }, [window.innerWidth])
 
   const notesDragStart = (e) => {
