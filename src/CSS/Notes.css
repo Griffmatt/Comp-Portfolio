@@ -4,7 +4,7 @@
      border-left: 3px solid #EFEFED;
      border-right: 3px solid #0F0F0F;
      border-bottom: 3px solid #0F0F0F;
-     font-size: 24px;
+     font-size: 1.3rem;
      position: fixed;
      top: 1vh;
      left: 50vw;
@@ -44,7 +44,7 @@
 
 .textArea{
     background-color: white;
-    width: 40vw;
+    width: 45vw;
     height: 15vh;
     max-width: 500px;
     max-height: 600px;
@@ -103,7 +103,7 @@
         padding-left: 1%;
         padding-right: 1%;
         margin: 2%;
-        height:20vh;
+        height:22vh;
     }
 
     .projectContainer img{

@@ -12,8 +12,8 @@
     border-bottom: 3px solid #0F0F0F;
     font-size: 24px;
     position: fixed;
-    top: 25%;
-    left: 15%;
+    top: 25vh;
+    left: 15vw;
 }
 
 .projects .textArea{

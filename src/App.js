@@ -43,7 +43,22 @@ function App() {
       return () => clearInterval(interval);
   }, [hidden])
 
+  useEffect(() => {
+    if(window.innerWidth<800){
+      setNotesStyles({
+        left:0,
+        top:0
+      })
+      setProjectsStyles({
+        left:0,
+        top:0
+      })
+      return
+    }
+  }, [window.innerWidth])
+
   const notesDragStart = (e) => {
+    if(window.innerWidth <800) return
       setLeftX(e.screenX - e.currentTarget.getBoundingClientRect().left);
       setTopY(e.screenY - e.currentTarget.getBoundingClientRect().top);
       setIsDragging(true);
@@ -54,6 +69,7 @@ function App() {
       }
 
     const projectsDragStart = (e) => {
+      if(window.innerWidth <800) return
       setLeftX(e.screenX - e.currentTarget.getBoundingClientRect().left);
       setTopY(e.screenY - e.currentTarget.getBoundingClientRect().top);
       setIsDragging(true);
@@ -188,7 +204,7 @@ function App() {
         <div className="textArea">
             {PROJECTS.map(project =>{
                 return(
-                    <div>
+                    <div key={project.title}>
                         <h2>{project.title}</h2>
                         <div key={project.title} className="projectContainer">
                             <a href={project.site} target="_blank" rel="noreferrer" draggable={false}>
