@@ -28,8 +28,14 @@
     cursor: default;
 }
 
+.topBarButtons{
+    display: flex;
+    gap: 5px;
+}
+
 .closeButton{
     height: 26px;
+    font-size: 24px;
     width: 26px;
     background-color: #BABABA;
     color: black;

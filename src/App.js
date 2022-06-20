@@ -26,6 +26,7 @@ function App() {
   const [projectsActive, setProjectsActive] = useState(false)
 
 
+
   let [time, setTime] = useState(new Date().toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}))
 
 
@@ -48,6 +49,7 @@ function App() {
     setProjectsStyles({})
 
   }, [window.innerWidth])
+  
 
   const notesDragStart = (e) => {
     if(window.innerWidth <800) return
@@ -175,13 +177,16 @@ function App() {
                 <img src="/Images/notepad.png" alt="Note Pad" className="topBarImg"/>
                 Notes
             </div>
-            <div className="closeButton" onMouseDown={closeNotes}>X</div>
+            <div className="topBarButtons">
+              <div className="closeButton" onMouseDown={closeNotes}>_</div>
+              <div className="closeButton" onMouseDown={closeNotes}>X</div>
+            </div>
         </div>
         <div className="textArea">
             <p>
                 Hello, my name is Griffin Matthews. <br/>
                 I am a Front End Developer <br/>
-                I have experience with React, JavaScript, HTML, CSS, SASS, NodeJS, MongoDB, SQL, and more <span hidden={hidden}>|</span>
+                I have experience with React, JavaScript, HTML, CSS, SASS, NodeJS, and more <span hidden={hidden}>|</span>
             </p>
         </div>
     </div>
@@ -191,7 +196,10 @@ function App() {
                 <img src="/Images/file.png" alt="File" className="topBarImg"/>
                 Projects
             </div>
-            <div className="closeButton" onMouseDown={closeProjects}>X</div>
+            <div className="topBarButtons">
+              <div className="closeButton" onMouseDown={closeProjects}>_</div>
+              <div className="closeButton" onMouseDown={closeProjects}>X</div>
+            </div>
         </div>
         <div className="textArea">
             {PROJECTS.map(project =>{
