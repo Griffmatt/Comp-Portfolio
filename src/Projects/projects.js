@@ -13,7 +13,15 @@ export const PROJECTS = [
         tools: "React, Hooks, JavaScript, CSS",
         site: "https://hungry-leakey-b3ec03.netlify.app",
         gitHub: "https://github.com/Griffmatt/word-game.git",
-        description: "Using React, Hooks, CSS, i recreated the popular game wordle, it takes an answer checks if it is correct and returns hints to what the answer is."
+        description: "This a clone of the popular game wordle, it uses react hooks for state management, as well to help check the users answer. It includes a color blind mode, as well as a dark mode. Javascript was heavily used to help create the game board, as well as for the logic when checking whether the users answer had letters in the correct place or letters that were in the word."
+    },
+    {
+        title: "Space Tourism",
+        image: "/Images/space-tourism.png",
+        tools: "Javascript, SASS, React,Hooks",
+        site: "https://incredible-banoffee-9cbcfb.netlify.app/",
+        gitHub: "https://github.com/Griffmatt/space-tourism",
+        description: "Space Tourism is a fully adaptive react based app. utilizing react router dom for navigation, React hooks for local state management and to help rerender new information as requested by the user. It was created based on figma design documents, and uses SASS to create a nice clean look."
     },
     {
         title: "PokeDex",
@@ -22,13 +30,5 @@ export const PROJECTS = [
         site: "https://fervent-lovelace-cc0bc8.netlify.app/",
         gitHub: "https://github.com/Griffmatt/PokemonDatabase",
         description: "Using React, Redux, Hooks, and Bootstrap you are able to search though 151 different pokemon, 13 different gym leaders, capture pokemon from various areas to add to your team, and create teams of 6."
-    },
-    {
-        title: "Pop Pizza",
-        image: "/Images/restaurant.png",
-        tools: "Javascript, BootStrap, CSS, HTML",
-        site: "https://thirsty-poitras-d671e8.netlify.app/",
-        gitHub: "https://github.com/Griffmatt/POPPizza",
-        description: "Using Javascript, HTML, and CSS i created a website for a pizza restaurant that allows you you to see the menu, create random pizza combinations, contact the restaurant, place a reservation, and buy a gift card."
     }
 ]
