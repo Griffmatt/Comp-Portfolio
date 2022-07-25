@@ -1,5 +1,21 @@
 export const PROJECTS = [
     {
+        title: "Product Feedback app",
+        image: "/Images/product-feedback.png",
+        tools: "React, TypeScript, Hooks, Redux, BEM ",
+        site: "https://ubiquitous-chimera-76ab58.netlify.app/",
+        gitHub: "https://github.com/Griffmatt/product-feedback-app",
+        description: "This is a bug tracking app i created with react, it utilizes typescript for type checking, redux for global state manggement, BEM naming convention to make managing the scss files easier, useState for local state manmagement, useEffect for mounting updating and unmounting components, react-router-dom to handle navigating to different components, and a custom drop down menu"
+    },
+    {
+        title: "Audio Ecommerce",
+        image: "/Images/audiophile.png",
+        tools: "React,TypeScript, Hooks, Redux ToolKit, context, SCSS ",
+        site: "https://snazzy-kitten-f7065e.netlify.app/",
+        gitHub: "https://github.com/Griffmatt/audio-ecommerce",
+        description: "This is an ecommerce store i created using react, typescript for type checking and catching bugs, redux for global state management, context to handle opening and closing modals between components"
+    },
+    {
         title: "Movie Mania",
         image: "/Images/movieMania.png",
         tools: "React, Hooks, Redux ToolKit, SASS, API",

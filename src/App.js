@@ -185,8 +185,8 @@ function App() {
         <div className="textArea">
             <p>
                 Hello, my name is Griffin Matthews. <br/>
-                I am a Front End Developer <br/>
-                I have experience with React, JavaScript, HTML, CSS, SASS, NodeJS, and more <span hidden={hidden}>|</span>
+                I am a Front End Developer <br/><br/>
+                I have experience with React, JavaScript, TypeScript, SASS, BEM, CSS modules, Jest, Cypress NodeJS, MongoDb, GraphQL, RESTful, Postgresql, agile, scrum, HTML, and CSS <span hidden={hidden}>|</span>
             </p>
         </div>
     </div>
